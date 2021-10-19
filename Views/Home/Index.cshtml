@@ -1,0 +1,30 @@
+﻿@model List<Solicitud>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<p>
+     <a asp-action='Registro'>Create New</a>
+
+ </p>
+<div class="text-center">
+    <h1 class="display-4">Lista de Solictudes </h1>
+
+    
+    @foreach (var solicitud in Model) {
+
+            <div> 
+                Nombre Producto : @solicitud.NombreP 
+                Nombre Producto : @solicitud.Foto
+                Nombre Producto : @solicitud.Descripcion
+                Nombre Producto : @solicitud.Precio
+                Nombre Producto : @solicitud.Telefono
+                Nombre Producto : @solicitud.Direccion
+                Nombre Producto : @solicitud.Usuario.Nombre
+                Nombre Producto : @solicitud.Categoria
+                        
+
+            </div>
+           
+            
+    }
+</div>

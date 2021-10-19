@@ -1,0 +1,35 @@
+@model Solicitud
+
+@{
+    ViewData["Title"] = "Solicitudes";
+}
+<h1>Formulario de solicitud</h1>
+
+
+<form asp-controller="Home" asp-action="Registro">
+    <div class="form-group">
+        <input type="hidden" asp-for="Id" />
+        <label asp-for="NombreP" class="form-label"></label>
+        <input asp-for="NombreP" class="form-control form-control-sm" type="text" placeholder="nombre del producto" aria-label=".form-control-sm" />
+        <label asp-for="Foto" class="form-label"></label>
+        <input asp-for="Foto" class="form-control form-control-sm" type="text" placeholder="Coloca url de la foto" aria-label=".form-control-sm" />
+        <label asp-for="Descripcion"></label>
+        <label asp-for="Precio" class="form-label"></label>
+        <input asp-for="Precio" class="form-control form-control-sm" type="text" placeholder="colocar precio" aria-label=".form-control-sm" />
+        <label asp-for="Telefono" class="form-label"></label>
+        <input asp-for="Telefono" class="form-control form-control-sm" type="number" placeholder="Escribe su numero de telefono" aria-label=".form-control-sm" />
+         <select asp-for="Categoria" class='form-control'>
+             <option value="Tecnologia">tecnologia</option>
+             <option value="arte">arte</option>
+             <option value="rop">ropa</option>
+             <option value="muebles">muebles</option>
+
+        </select>
+        <label asp-for="Direccion" class="form-label"></label>
+        <input asp-for="Direccion" class="form-control form-control-sm" type="text" placeholder="Escribe un nombre" aria-label=".form-control-sm" />
+        <textarea asp-for="Descripcion" class="form-control"></textarea>
+    </div>
+   <button class="btn btn-primary">Enviar</button>
+</form>
+
+
