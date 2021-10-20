@@ -48,16 +48,25 @@ namespace pc3simulacro.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Usuarios",
+                name: "solicitud",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    nombre = table.Column<string>(type: "text", nullable: true)
+                    nombreP = table.Column<string>(type: "text", nullable: true),
+                    foto = table.Column<string>(type: "text", nullable: true),
+                    descripcion = table.Column<string>(type: "text", nullable: true),
+                    precio = table.Column<string>(type: "text", nullable: true),
+                    telefono = table.Column<int>(type: "integer", nullable: false),
+                    direccion = table.Column<string>(type: "text", nullable: true),
+                    usuario = table.Column<string>(type: "text", nullable: true),
+                    categoria = table.Column<string>(type: "text", nullable: true),
+                    fecha = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    hoy = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Usuarios", x => x.id);
+                    table.PrimaryKey("PK_solicitud", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -166,33 +175,6 @@ namespace pc3simulacro.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "solicitud",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    nombreP = table.Column<string>(type: "text", nullable: true),
-                    foto = table.Column<string>(type: "text", nullable: true),
-                    descripcion = table.Column<string>(type: "text", nullable: true),
-                    precio = table.Column<string>(type: "text", nullable: true),
-                    telefono = table.Column<int>(type: "integer", nullable: false),
-                    direccion = table.Column<string>(type: "text", nullable: true),
-                    UsuarioId = table.Column<int>(type: "integer", nullable: true),
-                    categoria = table.Column<string>(type: "text", nullable: true),
-                    fecha = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_solicitud", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_solicitud_Usuarios_UsuarioId",
-                        column: x => x.UsuarioId,
-                        principalTable: "Usuarios",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -229,11 +211,6 @@ namespace pc3simulacro.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_solicitud_UsuarioId",
-                table: "solicitud",
-                column: "UsuarioId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -261,9 +238,6 @@ namespace pc3simulacro.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
-                name: "Usuarios");
         }
     }
 }

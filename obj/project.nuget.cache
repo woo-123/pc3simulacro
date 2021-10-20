@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T4cioE2uIg6SzeTEk4GolRtcOcDRs5Vd+ZcbQHu+vOigIvFwxC9O2kAd67/bEW1GhsELq0o4PGbvooFv4cpHiw==",
+  "dgSpecHash": "P8EXB9nn8xED2R2Vy8C8gPnXhP/DJY+QLHZmSwg+0j6K1uzqUCC/r6/mrSgvOxaL43hEkphxyyyEmmiNJG/qOA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\diego\\Desktop\\Fia 9\\Programacion1\\pc3simulacro\\pc3simulacro.csproj",
+  "projectFilePath": "C:\\Users\\diego\\Desktop\\Fia 9\\Programacion1\\teoria\\pc3simulacro\\pc3simulacro.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\diego\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\diego\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.9\\microsoft.aspnetcore.cryptography.internal.5.0.9.nupkg.sha512",

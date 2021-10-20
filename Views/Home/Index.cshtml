@@ -1,30 +1,40 @@
 ﻿@model List<Solicitud>
 @{
     ViewData["Title"] = "Home Page";
+    Layout="_Layout2";
+    
 }
 <p>
-     <a asp-action='Registro'>Create New</a>
+     <a asp-action='Registro' class='boton1'>Create New</a>
 
  </p>
-<div class="text-center">
-    <h1 class="display-4">Lista de Solictudes </h1>
-
+ <h1 class="display-4 titulo">Lista de Solictudes de los ultimos 5 Dias </h1>
+ <p>Solo se visualizara los registros que se hagan los ultimos 5 dias a fecha de hoy  </p>
+<div class="text-center grid">
+    
+  @if (Model.Count == 0) {
+        <p>No hay solicitudes aún , se le invita a registrar una compra presionando el boton de create new.</p>
+    }
     
     @foreach (var solicitud in Model) {
-
-            <div> 
-                Nombre Producto : @solicitud.NombreP 
-                Nombre Producto : @solicitud.Foto
-                Nombre Producto : @solicitud.Descripcion
-                Nombre Producto : @solicitud.Precio
-                Nombre Producto : @solicitud.Telefono
-                Nombre Producto : @solicitud.Direccion
-                Nombre Producto : @solicitud.Usuario.Nombre
-                Nombre Producto : @solicitud.Categoria
-                        
+        if((@solicitud.hoy-@solicitud.Fecha).Days <= 5 ){
+            <div class='columnas'> 
+                <div>
+                    <ul>
+               <li> Nombre Producto : @solicitud.NombreP </li>
+               <li> URL de foto : @solicitud.Foto</li>
+               <li> Descripcion : @solicitud.Descripcion</li>
+               <li> Precio del Producto : @solicitud.Precio</li>
+              <li> Tetelfono del comprador : @solicitud.Telefono</li> 
+             <li>  direccion del comprador : @solicitud.Direccion</li> 
+             <li>   Nombre del comprador : @solicitud.Usuario</li>
+              <li> categoria del producto : @solicitud.Categoria</li> 
+              <li>  fecha de la compra : @solicitud.Fecha</li> 
+                 </ul>
+                </div>     
 
             </div>
            
-            
+        } 
     }
 </div>

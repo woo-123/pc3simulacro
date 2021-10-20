@@ -28,20 +28,20 @@ namespace pc3simulacro.Models
         public int Telefono {get; set;}
         [Column("direccion")]
         public string Direccion {get; set;}
-          [Column("usuario")]
-        public Usuario Usuario {get; set;}
 
-        public int? UsuarioId{get; set;}
+          [Column("usuario")]
+    
+        public string Usuario {get; set;}
 
           [Column("categoria")]
         public string Categoria {get; set;}
         [Column("fecha")]
         public DateTime Fecha {get; set;}
 
-        public Solicitud (){
-            Fecha = DateTime.Now;
+         public DateTime hoy {get;set;}
+        public Solicitud(){
+          hoy = DateTime.Now;
         }
-
 
 
     }

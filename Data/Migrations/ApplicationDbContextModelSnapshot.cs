@@ -257,31 +257,16 @@ namespace pc3simulacro.Migrations
                         .HasColumnType("integer")
                         .HasColumnName("telefono");
 
-                    b.Property<int?>("UsuarioId")
-                        .HasColumnType("integer");
+                    b.Property<string>("Usuario")
+                        .HasColumnType("text")
+                        .HasColumnName("usuario");
+
+                    b.Property<DateTime>("hoy")
+                        .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UsuarioId");
 
                     b.ToTable("solicitud");
-                });
-
-            modelBuilder.Entity("pc3simulacro.Models.Usuario", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("Nombre")
-                        .HasColumnType("text")
-                        .HasColumnName("nombre");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -333,15 +318,6 @@ namespace pc3simulacro.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("pc3simulacro.Models.Solicitud", b =>
-                {
-                    b.HasOne("pc3simulacro.Models.Usuario", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UsuarioId");
-
-                    b.Navigation("Usuario");
                 });
 #pragma warning restore 612, 618
         }

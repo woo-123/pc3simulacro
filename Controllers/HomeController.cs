@@ -26,9 +26,7 @@ namespace pc3simulacro.Controllers
 
         public IActionResult Index()
         {
-          var solicitudes = _context.solicitud
-                                        .Include(s => s.Usuario)
-                                        .ToList();
+          var solicitudes = _context.solicitud.ToList();
 
             return View(solicitudes);
         }
@@ -38,8 +36,6 @@ namespace pc3simulacro.Controllers
         [HttpPost]
         public IActionResult Registro(Solicitud so){
             
-            var usuario = _context.Usuarios.First(u => u.Id == 1);
-                so.Usuario = usuario;
                 _context.Add(so);
                 _context.SaveChanges();
                 return RedirectToAction("Index");

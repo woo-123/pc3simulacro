@@ -2,12 +2,13 @@
 
 @{
     ViewData["Title"] = "Solicitudes";
+    Layout="_Layout2";
 }
 <h1>Formulario de solicitud</h1>
 
 
 <form asp-controller="Home" asp-action="Registro">
-    <div class="form-group">
+    <div class="form-group inputs">
         <input type="hidden" asp-for="Id" />
         <label asp-for="NombreP" class="form-label"></label>
         <input asp-for="NombreP" class="form-control form-control-sm" type="text" placeholder="nombre del producto" aria-label=".form-control-sm" />
@@ -18,6 +19,9 @@
         <input asp-for="Precio" class="form-control form-control-sm" type="text" placeholder="colocar precio" aria-label=".form-control-sm" />
         <label asp-for="Telefono" class="form-label"></label>
         <input asp-for="Telefono" class="form-control form-control-sm" type="number" placeholder="Escribe su numero de telefono" aria-label=".form-control-sm" />
+        <label asp-for="Fecha" class="form-label"></label>
+        <input asp-for="Fecha" class="form-control form-control-sm" type="date" placeholder="colocar fecha" aria-label=".form-control-sm" />
+         <label asp-for="Categoria" class="form-label"></label>
          <select asp-for="Categoria" class='form-control'>
              <option value="Tecnologia">tecnologia</option>
              <option value="arte">arte</option>
@@ -26,8 +30,10 @@
 
         </select>
         <label asp-for="Direccion" class="form-label"></label>
-        <input asp-for="Direccion" class="form-control form-control-sm" type="text" placeholder="Escribe un nombre" aria-label=".form-control-sm" />
-        <textarea asp-for="Descripcion" class="form-control"></textarea>
+        <input asp-for="Direccion" class="form-control form-control-sm" type="text" placeholder="Escribe su direccion" aria-label=".form-control-sm" />
+        <label asp-for="Usuario" class="form-label"></label>
+        <input asp-for="Usuario" class="form-control form-control-sm" type="text" placeholder="Escribe nobmre del comprador" aria-label=".form-control-sm" />
+        <textarea asp-for="Descripcion" class="form-control" placeholder="Descripcion"></textarea>
     </div>
    <button class="btn btn-primary">Enviar</button>
 </form>

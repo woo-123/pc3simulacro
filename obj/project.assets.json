@@ -7559,11 +7559,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\diego\\Desktop\\Fia 9\\Programacion1\\pc3simulacro\\pc3simulacro.csproj",
+      "projectUniqueName": "c:\\Users\\diego\\Desktop\\Fia 9\\Programacion1\\teoria\\pc3simulacro\\pc3simulacro.csproj",
       "projectName": "pc3simulacro",
-      "projectPath": "c:\\Users\\diego\\Desktop\\Fia 9\\Programacion1\\pc3simulacro\\pc3simulacro.csproj",
+      "projectPath": "c:\\Users\\diego\\Desktop\\Fia 9\\Programacion1\\teoria\\pc3simulacro\\pc3simulacro.csproj",
       "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\diego\\Desktop\\Fia 9\\Programacion1\\pc3simulacro\\obj\\",
+      "outputPath": "c:\\Users\\diego\\Desktop\\Fia 9\\Programacion1\\teoria\\pc3simulacro\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\diego\\AppData\\Roaming\\NuGet\\NuGet.Config"

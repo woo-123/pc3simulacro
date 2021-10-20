@@ -13,6 +13,6 @@ namespace pc3simulacro.Data
         {
         }
          public DbSet<pc3simulacro.Models.Solicitud> solicitud { get; set; }
-         public DbSet<pc3simulacro.Models.Usuario> Usuarios { get; set; }
+         
     }
 }
