@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Home Page";
     Layout="_Layout2";
-    
+     DateTime limitDate = DateTime.Today.AddDays(-5);
 }
 <p>
      <a asp-action='Registro' class='boton1'>Create New</a>
@@ -17,7 +17,7 @@
     }
     
     @foreach (var solicitud in Model) {
-        if((@solicitud.hoy-@solicitud.Fecha).Days <= 5 ){
+        if((DateTime.Compare(@solicitud.Fecha,limitDate)>=0) ){
             <div class='columnas'> 
                 <div>
                     <ul>

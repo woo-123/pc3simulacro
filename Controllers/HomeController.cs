@@ -26,6 +26,7 @@ namespace pc3simulacro.Controllers
 
         public IActionResult Index()
         {
+        
           var solicitudes = _context.solicitud.ToList();
 
             return View(solicitudes);
